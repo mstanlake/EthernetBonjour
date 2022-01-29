@@ -21,6 +21,8 @@
 #if !defined(__ETHERNET_BONJOUR_H__)
 #define __ETHERNET_BONJOUR_H__ 1
 
+#include <WiFiUdp.h>
+
 extern "C" {
    #include <inttypes.h>
 }
@@ -73,7 +75,7 @@ typedef void (*BonjourServiceFoundCallback)(const char*, MDNSServiceProtocol_t, 
 
 //class EthernetBonjourClass
 class EthernetBonjourClass :
-		public EthernetUDP
+		public WiFiUDP
 {
 private:
    MDNSDataInternal_t    _mdnsData;

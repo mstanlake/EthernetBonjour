@@ -24,8 +24,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include <Arduino.h>
-#include <Ethernet.h>
-#include <EthernetUdp.h>
+#include <WifiUdp.h>
+#include <WiFi101.h>
 
 extern "C" {
    #include <utility/EthernetUtil.h>
@@ -145,7 +145,7 @@ int EthernetBonjourClass::begin(const char* bonjourName)
 	int statusCode = 0;
 	statusCode = this->setBonjourName(bonjourName);
 	if (statusCode)
-		statusCode = this->beginMulticast(mdnsMulticastIPAddr, MDNS_SERVER_PORT);
+		statusCode = this->beginMulti(mdnsMulticastIPAddr, MDNS_SERVER_PORT);
 
 	return statusCode;
 }

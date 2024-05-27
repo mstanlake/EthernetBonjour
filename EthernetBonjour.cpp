@@ -24,7 +24,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <Arduino.h>
-#include <WifiUdp.h>
+#include <WiFiUdp.h>
 #include <WiFi101.h>
 
 extern "C" {
@@ -1318,7 +1318,7 @@ void EthernetBonjourClass::_writeMyIPAnswerRecord(uint16_t* pPtr, uint8_t* buf, 
 
 	uint8_t myIp[4];
 	IPAddress myIpBuf;
-	myIpBuf = Ethernet.localIP();
+	myIpBuf = WiFi.localIP();
 	myIp[0] = myIpBuf [0];
 	myIp[1] = myIpBuf [1];
 	myIp[2] = myIpBuf [2];
